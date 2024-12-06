@@ -1,0 +1,17 @@
+
+.container {
+  margin-top: 20px;
+}
+
+.noProjects {
+  font-size: var(--font-size-base, 1rem);
+  color: var(--secondary-color, #6c757d);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.projectList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

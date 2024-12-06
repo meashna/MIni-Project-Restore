@@ -1,0 +1,41 @@
+
+.projectItem {
+  padding: 10px;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 4px;
+  background-color: white;
+  transition: box-shadow 0.3s;
+  width: 60%;
+  margin: 10px auto;
+}
+
+.projectItem:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.projectLink {
+  text-decoration: none;
+  color: var(--text-color, black);
+}
+
+.projectTitle {
+  font-size: var(--font-size-large, 1.2rem);
+  margin: 0 0 5px 0;
+}
+
+.projectDate {
+  font-size: var(--font-size-small, 0.875rem);
+  color: var(--secondary-color, #6c757d);
+}
+
+@media (max-width: 768px) {
+  .projectItem {
+    padding: 10px;
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 4px;
+    background-color: white;
+    transition: box-shadow 0.3s;
+    width: 100%;
+    margin: 10px auto;
+  }
+}
