@@ -213,20 +213,20 @@ exports.restoreTodo = async (req, res) => {
         // }
 
         // Restore the todo
-        const todo = await Todo.findById({ _id: todoId, deleted: true });
-        if (!todo) {
-            console.log('Todo not found');
-            return res.status(404).json({ message: 'Todo not found' });
-        }
+        // const todo = await Todo.findById({ _id: todoId, deleted: true });
+        // if (!todo) {
+        //     console.log('Todo not found');
+        //     return res.status(404).json({ message: 'Todo not found' });
+        // }
         
-        todo.deleted = false;
-        todo.updatedDate = Date.now();
-        await todo.save();
-        console.log('Todo restored successfully:', todo);
+        // todo.deleted = false;
+        // todo.updatedDate = Date.now();
+        // await todo.save();
+        // console.log('Todo restored successfully:', todo);
 
         const todo = await Todo.findOneAndUpdate(
         { _id: todoId, deleted: true },
-        { deleted: true, updatedDate: Date.now() },
+        { deleted: false, updatedDate: Date.now() },
         { new: true } // Returns the updated document
         );
 

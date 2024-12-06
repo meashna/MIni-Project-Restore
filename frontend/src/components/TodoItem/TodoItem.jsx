@@ -39,7 +39,7 @@ const TodoItem=({ todo, auth, refreshTodos, deleteTodo })=> {
   const handleDelete = async () => {
     Swal.fire({
       title: 'Are you sure?',
-      text: 'This action will delete the todo permanently.',
+      text: 'This action will delete  to do temp.',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#d33',
@@ -48,7 +48,7 @@ const TodoItem=({ todo, auth, refreshTodos, deleteTodo })=> {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await api.put(`/todos/${todo._id}`);
+          await api.delete(`/todos/${todo._id}`);
           deleteTodo(todo._id); // Update parent state
           Swal.fire({
             icon: 'success',

@@ -31,7 +31,7 @@ router.put(
   todoController.updateTodo
 );
 
-router.put("/:todoId", todoController.deleteTodo);
+router.delete("/:todoId", todoController.deleteTodo);
 router.delete("/:todoId/permanent", todoController.deleteTodoPermanently);
 
 router.post('/:todoId/restore', todoController.restoreTodo);
