@@ -224,6 +224,13 @@ exports.restoreTodo = async (req, res) => {
         await todo.save();
         console.log('Todo restored successfully:', todo);
 
+        const todo = await Todo.findOneAndUpdate(
+        { _id: todoId, deleted: true },
+        { deleted: true, updatedDate: Date.now() },
+        { new: true } // Returns the updated document
+        );
+
+
         res.status(200).json({ message: 'Todo restored successfully', todo });
     } catch (err) {
         console.error('Error restoring todo:', err);
